@@ -1,0 +1,10 @@
+[gd_resource type="AnimationLibrary" load_steps=3 format=3 uid="uid://cuab1mufnl3rd"]
+
+[ext_resource type="Animation" uid="uid://5v0fy4g7y2n5" path="res://elements/player/Blink.res" id="1_6gepr"]
+[ext_resource type="Animation" uid="uid://c03eugh5g15cx" path="res://elements/player/Swing.res" id="2_3i3o4"]
+
+[resource]
+_data = {
+"Blink": ExtResource("1_6gepr"),
+"Swing": ExtResource("2_3i3o4")
+}

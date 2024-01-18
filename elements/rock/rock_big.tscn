@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://coy0itwkm5723"]
+
+[ext_resource type="Script" path="res://elements/harvestable/harvestable.gd" id="1_0l2bu"]
+[ext_resource type="PackedScene" uid="uid://bwvpm0vbxx6o8" path="res://elements/rock/rock.glb" id="1_tdpl5"]
+[ext_resource type="Shape3D" uid="uid://bx41t5nu3mlbr" path="res://elements/rock/rock_collision.tres" id="2_x8lld"]
+[ext_resource type="PackedScene" uid="uid://cl5tk0f46mk6u" path="res://elements/damage_indicator/damage_indicator.tscn" id="3_xvped"]
+
+[node name="RockBig" type="StaticBody3D"]
+script = ExtResource("1_0l2bu")
+damage_indicator = ExtResource("3_xvped")
+
+[node name="rock" parent="." instance=ExtResource("1_tdpl5")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.0704278, 0.205441)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.554924, 0.205441)
+shape = ExtResource("2_x8lld")
+
+[node name="DamageIndicatorPosition" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.92959, 0)

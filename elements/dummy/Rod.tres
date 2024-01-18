@@ -1,0 +1,24 @@
+[gd_resource type="StandardMaterial3D" load_steps=7 format=3 uid="uid://5dbj08woacwt"]
+
+[ext_resource type="Texture2D" uid="uid://bx4esuu7pno81" path="res://elements/dummy/dummy_Rod_BaseColor.png" id="1_xxw1u"]
+[ext_resource type="Texture2D" uid="uid://bmaga8er1x03r" path="res://elements/dummy/dummy_Rod_AO.png" id="2_pofx1"]
+[ext_resource type="Texture2D" uid="uid://dbbloou1abfxg" path="res://elements/dummy/dummy_Rod_Height.exr" id="3_nv6t5"]
+[ext_resource type="Texture2D" uid="uid://fr5lgl03qni3" path="res://elements/dummy/dummy_Rod_Metallic.png" id="4_kj3x5"]
+[ext_resource type="Texture2D" uid="uid://7abysjbyywer" path="res://elements/dummy/dummy_Rod_Normal.png" id="5_72iq4"]
+[ext_resource type="Texture2D" uid="uid://bb0rassqxms4a" path="res://elements/dummy/dummy_Rod_Roughness.png" id="6_nvyuc"]
+
+[resource]
+resource_name = "Rod"
+cull_mode = 2
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+albedo_texture = ExtResource("1_xxw1u")
+metallic = 1.0
+metallic_texture = ExtResource("4_kj3x5")
+roughness_texture = ExtResource("6_nvyuc")
+normal_enabled = true
+normal_texture = ExtResource("5_72iq4")
+ao_enabled = true
+ao_texture = ExtResource("2_pofx1")
+heightmap_enabled = true
+heightmap_scale = 0.02
+heightmap_texture = ExtResource("3_nv6t5")

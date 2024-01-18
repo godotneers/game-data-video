@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://jhn0a8mag0b8"]
+
+[ext_resource type="Script" path="res://elements/melee_weapon/melee_weapon_3d.gd" id="1_aewah"]
+[ext_resource type="PackedScene" uid="uid://cocxhrbj0jjax" path="res://elements/sword/sword.glb" id="1_bl3o4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vs0qn"]
+radius = 0.123321
+height = 0.84782
+
+[node name="Sword" type="Node3D"]
+script = ExtResource("1_aewah")
+
+[node name="sword" parent="." instance=ExtResource("1_bl3o4")]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="HitBox" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00339377, 0.791773, -0.00380871)
+shape = SubResource("CapsuleShape3D_vs0qn")
+
+[connection signal="body_entered" from="Area3D" to="." method="on_hit"]

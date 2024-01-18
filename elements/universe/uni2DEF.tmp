@@ -1,0 +1,172 @@
+[gd_scene load_steps=22 format=3 uid="uid://1heqaiv22fgq"]
+
+[ext_resource type="PackedScene" uid="uid://bb2lp50sjndus" path="res://world/world.tscn" id="1_o8dj2"]
+[ext_resource type="PackedScene" uid="uid://byosvo2hx7df8" path="res://player/player.tscn" id="2_46g3y"]
+[ext_resource type="Terrain3DStorage" uid="uid://dq86lo0ibriqp" path="res://universe/universe.res" id="2_bgqu1"]
+[ext_resource type="Texture2D" path="res://world/ground037_nrm_rgh.dds" id="3_1y3w3"]
+[ext_resource type="PackedScene" uid="uid://grvayjmmafd5" path="res://dummy/dummy.tscn" id="8_dmw66"]
+[ext_resource type="Script" path="res://universe/pickup.gd" id="9_jah14"]
+[ext_resource type="Script" path="res://user_interface/ui_root/ui_root.gd" id="9_us8tb"]
+[ext_resource type="Script" path="res://user_interface/inventory_dialog/inventory_dialog.gd" id="10_46yj4"]
+[ext_resource type="PackedScene" uid="uid://cqqfd6fdo0eiy" path="res://pickaxe/pickaxe.glb" id="10_brpdt"]
+[ext_resource type="PackedScene" uid="uid://brw2qweo3ix7x" path="res://user_interface/inventory_dialog/item_slot/item_slot.tscn" id="10_obam3"]
+[ext_resource type="Script" path="res://user_interface/inventory_dialog/inventory_grid.gd" id="10_sspi0"]
+[ext_resource type="Resource" uid="uid://cw0j1v3vacs4q" path="res://sword/sword_item.tres" id="11_7s05e"]
+[ext_resource type="Resource" uid="uid://d18ah00kg8o46" path="res://pickaxe/pickaxe_item.tres" id="11_7vbdy"]
+[ext_resource type="PackedScene" uid="uid://elhnshdjp35m" path="res://pickup/pickup.tscn" id="13_u7pcp"]
+[ext_resource type="Resource" uid="uid://ce8460eamdajn" path="res://mace/mace_item.tres" id="14_3ta2i"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wrhcx"]
+noise_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7cawx"]
+generate_mipmaps = false
+seamless = true
+noise = SubResource("FastNoiseLite_wrhcx")
+
+[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_5ogdw"]
+_shader_parameters = {
+"blend_sharpness": 0.87,
+"height_blending": true,
+"noise_scale": 0.1,
+"noise_texture": SubResource("NoiseTexture2D_7cawx")
+}
+
+[sub_resource type="Terrain3DTexture" id="Terrain3DTexture_v0gh4"]
+albedo_color = Color(0.231373, 0.215686, 0, 1)
+albedo_texture = ExtResource("3_1y3w3")
+normal_texture = ExtResource("3_1y3w3")
+
+[sub_resource type="Terrain3DTextureList" id="Terrain3DTextureList_cr00f"]
+textures = Array[Terrain3DTexture]([SubResource("Terrain3DTexture_v0gh4")])
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j76na"]
+
+[node name="Universe" type="Node3D"]
+
+[node name="WorldRoot" type="Node3D" parent="."]
+
+[node name="World" parent="WorldRoot" instance=ExtResource("1_o8dj2")]
+
+[node name="Terrain3D" type="Terrain3D" parent="WorldRoot"]
+storage = ExtResource("2_bgqu1")
+material = SubResource("Terrain3DMaterial_5ogdw")
+texture_list = SubResource("Terrain3DTextureList_cr00f")
+collision_mask = 3
+
+[node name="Player" parent="WorldRoot" instance=ExtResource("2_46g3y")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.24004, 15.873, 5.85423)
+collision_mask = 3
+
+[node name="Dummy" parent="WorldRoot" instance=ExtResource("8_dmw66")]
+transform = Transform3D(0.349472, 0, -0.936947, 0, 1, 0, 0.936947, 0, 0.349472, 20, 14.7831, 2)
+
+[node name="Pickup" type="Node3D" parent="WorldRoot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.79196, 14.8217, 1.31368)
+script = ExtResource("9_jah14")
+
+[node name="pickaxe" parent="WorldRoot/Pickup" instance=ExtResource("10_brpdt")]
+
+[node name="Area3D" type="Area3D" parent="WorldRoot/Pickup"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldRoot/Pickup/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.963446, 0)
+shape = SubResource("CapsuleShape3D_j76na")
+
+[node name="Pickup2" parent="WorldRoot" instance=ExtResource("13_u7pcp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.97598, 15.1909, 3.1057)
+item = ExtResource("14_3ta2i")
+
+[node name="Pickup4" parent="WorldRoot" instance=ExtResource("13_u7pcp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.97598, 15.1909, 5.82215)
+item = ExtResource("11_7s05e")
+
+[node name="Pickup3" parent="WorldRoot" instance=ExtResource("13_u7pcp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.79388, 15.1909, 3.1057)
+item = ExtResource("11_7vbdy")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI Root" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_us8tb")
+
+[node name="InventoryDialog" type="PanelContainer" parent="CanvasLayer/UI Root"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+script = ExtResource("10_46yj4")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI Root/InventoryDialog"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI Root/InventoryDialog/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI Root/InventoryDialog/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer/UI Root/InventoryDialog/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mr. G's Stuff"
+horizontal_alignment = 1
+
+[node name="CloseButton" type="Button" parent="CanvasLayer/UI Root/InventoryDialog/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = " X "
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI Root/InventoryDialog/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI Root/InventoryDialog/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/UI Root/InventoryDialog/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="CanvasLayer/UI Root/InventoryDialog/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Inventory contents"
+
+[node name="InventoryGrid" type="GridContainer" parent="CanvasLayer/UI Root/InventoryDialog/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+columns = 5
+script = ExtResource("10_sspi0")
+slot_scene = ExtResource("10_obam3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI Root/InventoryDialog/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="CanvasLayer/UI Root/InventoryDialog/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Equipped"
+horizontal_alignment = 1
+
+[node name="ItemSlot" parent="CanvasLayer/UI Root/InventoryDialog/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("10_obam3")]
+unique_name_in_owner = true
+layout_mode = 2
+slot_source = 2
+
+[connection signal="body_entered" from="WorldRoot/Pickup/Area3D" to="WorldRoot/Pickup" method="_on_area_3d_body_entered"]
+[connection signal="pressed" from="CanvasLayer/UI Root/InventoryDialog/MarginContainer/VBoxContainer/HBoxContainer/CloseButton" to="CanvasLayer/UI Root/InventoryDialog" method="_on_close_button_pressed"]
+[connection signal="item_dropped" from="CanvasLayer/UI Root/InventoryDialog/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/InventoryGrid" to="CanvasLayer/UI Root/InventoryDialog" method="_on_item_added_to_inventory"]
+[connection signal="item_dropped" from="CanvasLayer/UI Root/InventoryDialog/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/ItemSlot" to="CanvasLayer/UI Root/InventoryDialog" method="_on_item_dropped_to_equipment_slot"]

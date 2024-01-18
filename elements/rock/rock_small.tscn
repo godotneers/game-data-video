@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://chmfyndu5pbam"]
+
+[ext_resource type="PackedScene" uid="uid://bwvpm0vbxx6o8" path="res://elements/rock/rock.glb" id="1_bgpar"]
+
+[node name="RockSmall" type="Node3D"]
+
+[node name="rock" parent="." instance=ExtResource("1_bgpar")]
+transform = Transform3D(0.2, 0, 0, 0, -0.0890615, -0.179076, 0, 0.179076, -0.0890615, 0, 0.125904, -0.135181)

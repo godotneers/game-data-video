@@ -1,0 +1,9 @@
+# Godot 4+ specific ignores
+.godot/
+
+# IntelliJ/Rider
+.idea/
+*.iml
+
+# Keep the raw assets local, only.
+assets/

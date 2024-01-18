@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MeleeWeapon" load_steps=4 format=3 uid="uid://8e7baesbg5d"]
+
+[ext_resource type="Texture2D" uid="uid://camts4dsborsd" path="res://elements/mace/mace_icon.svg" id="1_vrilb"]
+[ext_resource type="PackedScene" uid="uid://br1mtjghdwck6" path="res://elements/mace/mace.tscn" id="2_fwffp"]
+[ext_resource type="Script" path="res://model/melee_weapon.gd" id="3_rd3gc"]
+
+[resource]
+script = ExtResource("3_rd3gc")
+damage = 12
+name = "Mace"
+icon = ExtResource("1_vrilb")
+scene = ExtResource("2_fwffp")

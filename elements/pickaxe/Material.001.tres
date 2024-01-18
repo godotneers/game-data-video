@@ -1,0 +1,28 @@
+[gd_resource type="StandardMaterial3D" load_steps=7 format=3 uid="uid://btpm8urqfh026"]
+
+[ext_resource type="Texture2D" uid="uid://dautcywwrp7s3" path="res://elements/pickaxe/pickaxe_DefaultMaterial_BaseColor.png" id="1_q7y4q"]
+[ext_resource type="Texture2D" uid="uid://bebgy1smtawe3" path="res://elements/pickaxe/pickaxe_DefaultMaterial_AO.png" id="2_bw8pp"]
+[ext_resource type="Texture2D" uid="uid://lsd7dmibgbxb" path="res://elements/pickaxe/pickaxe_DefaultMaterial_Height.exr" id="3_n70lt"]
+[ext_resource type="Texture2D" uid="uid://b2rgqfpud5e2l" path="res://elements/pickaxe/pickaxe_DefaultMaterial_Metallic.png" id="4_gr5tg"]
+[ext_resource type="Texture2D" uid="uid://k0nvmly1mp7l" path="res://elements/pickaxe/pickaxe_DefaultMaterial_Normal.png" id="5_cfpo8"]
+[ext_resource type="Texture2D" uid="uid://c1eou2fgyfa6" path="res://elements/pickaxe/pickaxe_DefaultMaterial_Roughness.png" id="6_yqwbv"]
+
+[resource]
+resource_name = "Material.001"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+albedo_texture = ExtResource("1_q7y4q")
+metallic = 1.0
+metallic_texture = ExtResource("4_gr5tg")
+roughness_texture = ExtResource("6_yqwbv")
+normal_enabled = true
+normal_texture = ExtResource("5_cfpo8")
+ao_enabled = true
+ao_texture = ExtResource("2_bw8pp")
+heightmap_enabled = true
+heightmap_scale = 0.02
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("3_n70lt")

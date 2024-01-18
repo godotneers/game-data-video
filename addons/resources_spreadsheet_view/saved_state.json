@@ -1,0 +1,27 @@
+{
+  "hidden_columns": {
+    "res://data/items/": {
+      "resource_local_to_scene": true,
+      "resource_name": true
+    },
+    "res://data/recipes/": {
+      "resource_local_to_scene": true,
+      "resource_name": true
+    },
+    "res://example/Items/": {
+      "resource_local_to_scene": true,
+      "resource_name": true
+    }
+  },
+  "recent_paths": [
+    "res://data/items/"
+  ],
+  "table_functions": {
+    "filter": [
+      "return true"
+    ],
+    "process": [
+      "return value"
+    ]
+  }
+}

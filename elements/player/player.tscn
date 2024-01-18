@@ -1,0 +1,91 @@
+[gd_scene load_steps=7 format=3 uid="uid://byosvo2hx7df8"]
+
+[ext_resource type="Script" path="res://elements/player/player.gd" id="1_hxcsb"]
+[ext_resource type="PackedScene" uid="uid://brsyy0hbjk5a8" path="res://elements/camera/camera.tscn" id="2_itq8t"]
+[ext_resource type="PackedScene" uid="uid://dhygfannk5wb1" path="res://elements/player/mr.g.glb" id="3_jtlup"]
+[ext_resource type="AnimationLibrary" uid="uid://cuab1mufnl3rd" path="res://elements/player/player_animations.tres" id="4_ftnur"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ypl5u"]
+radius = 1.0
+
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_twc2s"]
+
+[node name="Player" type="CharacterBody3D"]
+collision_layer = 2
+script = ExtResource("1_hxcsb")
+
+[node name="Camera" parent="." instance=ExtResource("2_itq8t")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.219903, 0)
+
+[node name="CollisionShapeBody" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+shape = SubResource("SphereShape3D_ypl5u")
+
+[node name="CollisionShapeRay" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0)
+shape = SubResource("SeparationRayShape3D_twc2s")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+root_node = NodePath("../Model/mr_g")
+libraries = {
+"player_animations": ExtResource("4_ftnur")
+}
+
+[node name="Model" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="mr_g" parent="Model" instance=ExtResource("3_jtlup")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.02677, 0)
+
+[node name="Skeleton3D" parent="Model/mr_g/Armature" index="0"]
+bones/1/rotation = Quaternion(0.707107, -3.68083e-07, -3.68083e-07, 0.707107)
+bones/2/rotation = Quaternion(-0.707218, 0.000782874, -0.000782138, 0.706995)
+bones/3/rotation = Quaternion(0.707107, 3.68083e-07, 3.68083e-07, 0.707107)
+bones/4/rotation = Quaternion(-0.000157922, -5.20524e-07, 0.00110643, 0.999999)
+bones/6/rotation = Quaternion(0.707107, -4.52377e-07, -4.52377e-07, 0.707107)
+bones/7/rotation = Quaternion(0.707107, 4.52377e-07, 4.52377e-07, 0.707107)
+bones/8/rotation = Quaternion(0.608732, 0.243856, 0.243856, 0.714502)
+bones/8/scale = Vector3(1, 1, 1)
+bones/9/rotation = Quaternion(0.41726, -0.324852, 0.157061, 0.834085)
+bones/10/rotation = Quaternion(0.608734, -0.243853, -0.243853, 0.714503)
+bones/11/rotation = Quaternion(0.421663, 0.285784, -0.145034, 0.848229)
+bones/12/rotation = Quaternion(-0.210823, 1.1653e-07, -2.51321e-08, 0.977524)
+bones/13/rotation = Quaternion(0.840288, -4.56076e-07, -5.50496e-07, 0.54214)
+bones/14/rotation = Quaternion(0.840288, 3.66856e-07, 7.25006e-07, 0.54214)
+bones/15/scale = Vector3(1, 1, 1)
+bones/16/scale = Vector3(1, 1, 1)
+bones/17/scale = Vector3(1, 1, 1)
+bones/18/scale = Vector3(1, 1, 1)
+
+[node name="Eye L" parent="Model/mr_g/Armature/Skeleton3D" index="0"]
+transform = Transform3D(0.999998, -3.49018e-07, 0.00221326, -3.49588e-07, 1, 0.000315545, -0.00221326, -0.000315547, 0.999997, -0.00118101, -0.000168398, 0.000522792)
+
+[node name="Eye R" parent="Model/mr_g/Armature/Skeleton3D" index="1"]
+transform = Transform3D(0.532943, -0.00117933, -1.86215e-07, 1.86267e-07, 0.000168326, -0.532944, 0.00117933, 0.532943, 0.000168326, -0.207193, 0.198796, 0.533873)
+
+[node name="Lid L" parent="Model/mr_g/Armature/Skeleton3D" index="2"]
+transform = Transform3D(0.599928, -0.0324579, 0.00750084, -0.0176267, -0.42408, -0.425286, 0.0282679, 0.424412, -0.42438, 0.207193, 0.198796, 0.533873)
+
+[node name="Lid R" parent="Model/mr_g/Armature/Skeleton3D" index="3"]
+transform = Transform3D(0.599134, -0.00352585, -0.0452685, -0.0345855, -0.423571, -0.424752, -0.0294196, 0.426143, -0.422563, -0.207193, 0.198796, 0.533873)
+
+[node name="Hand R" parent="Model/mr_g/Armature/Skeleton3D" index="4"]
+transform = Transform3D(1, 1.13687e-13, -1.31687e-13, -2.84217e-13, 1, -2.38419e-07, 1.1653e-13, 2.38419e-07, 1, -0.944505, -0.121741, -0.0688697)
+
+[node name="Hand L" parent="Model/mr_g/Armature/Skeleton3D" index="5"]
+transform = Transform3D(1, -1.13687e-13, 1.31687e-13, 2.84217e-13, 1, -2.38419e-07, -1.1653e-13, 2.38419e-07, 1, -0.944505, -0.121741, -0.0688697)
+
+[node name="Head" parent="Model/mr_g/Armature/Skeleton3D" index="6"]
+transform = Transform3D(0.532944, 0, 0, 0, 0.532944, 0, 0, 0, 0.532944, 0, 0, 0)
+
+[node name="HandAttachment" type="BoneAttachment3D" parent="Model"]
+unique_name_in_owner = true
+transform = Transform3D(-1, -1.3453e-13, -8.74226e-08, -2.84217e-13, 1, -2.38419e-07, 8.74227e-08, -2.38419e-07, -1, 0.944505, 0.905029, 0.0688696)
+bone_name = "Hand R"
+bone_idx = 16
+use_external_skeleton = true
+external_skeleton = NodePath("../mr_g/Armature/Skeleton3D")
+
+[editable path="Model/mr_g"]

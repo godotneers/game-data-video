@@ -1,0 +1,111 @@
+[gd_scene load_steps=20 format=3 uid="uid://1heqaiv22fgq"]
+
+[ext_resource type="PackedScene" uid="uid://bb2lp50sjndus" path="res://elements/world/world.tscn" id="1_o8dj2"]
+[ext_resource type="Script" path="res://elements/universe/universe.gd" id="1_tj5bo"]
+[ext_resource type="PackedScene" uid="uid://byosvo2hx7df8" path="res://elements/player/player.tscn" id="2_46g3y"]
+[ext_resource type="Terrain3DStorage" uid="uid://dq86lo0ibriqp" path="res://elements/universe/universe.res" id="2_bgqu1"]
+[ext_resource type="Texture2D" path="res://elements/world/ground037_nrm_rgh.dds" id="3_1y3w3"]
+[ext_resource type="PackedScene" uid="uid://grvayjmmafd5" path="res://elements/dummy/dummy.tscn" id="8_dmw66"]
+[ext_resource type="Resource" uid="uid://x7wjyuq5o527" path="res://data/items/sword.tres" id="8_okehv"]
+[ext_resource type="Script" path="res://user_interface/ui_root/ui_root.gd" id="9_us8tb"]
+[ext_resource type="PackedScene" uid="uid://6r4rm2hswvtu" path="res://user_interface/inventory_dialog/inventory_dialog.tscn" id="10_kvpsg"]
+[ext_resource type="Resource" uid="uid://bs04rbmicblmd" path="res://data/items/iron_ore.tres" id="10_ncp5a"]
+[ext_resource type="Resource" uid="uid://dqelj5ln4753c" path="res://data/items/pickaxe.tres" id="11_1ss3q"]
+[ext_resource type="PackedScene" uid="uid://d2eutmynpisem" path="res://user_interface/crafting_dialog/crafting_dialog.tscn" id="12_ce2h0"]
+[ext_resource type="Resource" uid="uid://devjlrqi4j25h" path="res://data/all_recipes.tres" id="12_x3ukg"]
+[ext_resource type="PackedScene" uid="uid://v82xc5d3kigg" path="res://elements/pickup/pickup.tscn" id="13_u7pcp"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wrhcx"]
+noise_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7cawx"]
+generate_mipmaps = false
+seamless = true
+noise = SubResource("FastNoiseLite_wrhcx")
+
+[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_5ogdw"]
+_shader_parameters = {
+"blend_sharpness": 0.87,
+"height_blending": true,
+"noise_scale": 0.1,
+"noise_texture": SubResource("NoiseTexture2D_7cawx")
+}
+
+[sub_resource type="Terrain3DTexture" id="Terrain3DTexture_v0gh4"]
+albedo_color = Color(0.231373, 0.215686, 0, 1)
+albedo_texture = ExtResource("3_1y3w3")
+normal_texture = ExtResource("3_1y3w3")
+
+[sub_resource type="Terrain3DTextureList" id="Terrain3DTextureList_cr00f"]
+textures = Array[Terrain3DTexture]([SubResource("Terrain3DTexture_v0gh4")])
+
+[node name="Universe" type="Node3D"]
+script = ExtResource("1_tj5bo")
+
+[node name="WorldRoot" type="Node3D" parent="."]
+
+[node name="World" parent="WorldRoot" instance=ExtResource("1_o8dj2")]
+
+[node name="Terrain3D" type="Terrain3D" parent="WorldRoot"]
+storage = ExtResource("2_bgqu1")
+material = SubResource("Terrain3DMaterial_5ogdw")
+texture_list = SubResource("Terrain3DTextureList_cr00f")
+collision_mask = 3
+
+[node name="Player" parent="WorldRoot" instance=ExtResource("2_46g3y")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.24004, 15.873, 5.85423)
+collision_mask = 3
+
+[node name="Dummy" parent="WorldRoot" instance=ExtResource("8_dmw66")]
+transform = Transform3D(0.349472, 0, -0.936947, 0, 1, 0, 0.936947, 0, 0.349472, 20, 14.7831, 2)
+
+[node name="Pickup2" parent="WorldRoot" instance=ExtResource("13_u7pcp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.97598, 15.1909, 3.1057)
+item = ExtResource("11_1ss3q")
+
+[node name="Pickup3" parent="WorldRoot" instance=ExtResource("13_u7pcp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1654, 15.1909, 3.1057)
+item = ExtResource("8_okehv")
+
+[node name="Pickup4" parent="WorldRoot" instance=ExtResource("13_u7pcp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4498, 15.1909, 3.1057)
+item = ExtResource("10_ncp5a")
+
+[node name="Pickup5" parent="WorldRoot" instance=ExtResource("13_u7pcp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4498, 15.1909, 5.06827)
+item = ExtResource("10_ncp5a")
+
+[node name="Pickup6" parent="WorldRoot" instance=ExtResource("13_u7pcp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4498, 15.1909, 6.57105)
+item = ExtResource("10_ncp5a")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("9_us8tb")
+all_recipes = ExtResource("12_x3ukg")
+
+[node name="InventoryDialog" parent="CanvasLayer" instance=ExtResource("10_kvpsg")]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.5
+offset_top = -17.5
+offset_right = 62.5
+offset_bottom = 17.5
+
+[node name="CraftingDialog" parent="CanvasLayer" instance=ExtResource("12_ce2h0")]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -171.0
+offset_top = -66.0
+offset_right = 171.0
+offset_bottom = 66.0

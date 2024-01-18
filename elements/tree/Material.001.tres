@@ -1,0 +1,21 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://c6wqof73ueird"]
+
+[ext_resource type="Texture2D" uid="uid://c6x40wqh6j2w6" path="res://elements/tree/tree_DefaultMaterial_BaseColor.png" id="1_e7s05"]
+[ext_resource type="Texture2D" uid="uid://43jx5x4yjulh" path="res://elements/tree/tree_DefaultMaterial_AO.png" id="2_k2arm"]
+[ext_resource type="Texture2D" uid="uid://ddo3snrxr4fid" path="res://elements/tree/tree_DefaultMaterial_Metallic.png" id="3_iq063"]
+[ext_resource type="Texture2D" uid="uid://cgaakfuj2wh0v" path="res://elements/tree/tree_DefaultMaterial_Normal.png" id="4_f10fv"]
+[ext_resource type="Texture2D" uid="uid://dbyq5d1ohn0ed" path="res://elements/tree/tree_DefaultMaterial_Roughness.png" id="5_k6j0w"]
+
+[resource]
+resource_name = "Material.001"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+albedo_texture = ExtResource("1_e7s05")
+metallic = 1.0
+metallic_texture = ExtResource("3_iq063")
+roughness_texture = ExtResource("5_k6j0w")
+normal_enabled = true
+normal_texture = ExtResource("4_f10fv")
+ao_enabled = true
+ao_texture = ExtResource("2_k2arm")

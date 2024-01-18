@@ -1,0 +1,27 @@
+[gd_resource type="StandardMaterial3D" load_steps=7 format=3 uid="uid://bdr3fvgoygn64"]
+
+[ext_resource type="Texture2D" uid="uid://cw7d0t1g2mu00" path="res://elements/sword/sword_Blade_BaseColor.png" id="1_ey2f4"]
+[ext_resource type="Texture2D" uid="uid://geex48xcjf28" path="res://elements/sword/sword_Blade_Height.exr" id="2_80scr"]
+[ext_resource type="Texture2D" uid="uid://b5mnyldt1ujqr" path="res://elements/sword/sword_Blade_AO.png" id="2_s2iuv"]
+[ext_resource type="Texture2D" uid="uid://c48g87ly6eiaa" path="res://elements/sword/sword_Blade_Metallic.png" id="3_qwp66"]
+[ext_resource type="Texture2D" uid="uid://dneojpmgg03ei" path="res://elements/sword/sword_Blade_Normal.png" id="4_sgy64"]
+[ext_resource type="Texture2D" uid="uid://chbfgap1t23uu" path="res://elements/sword/sword_Blade_Roughness.png" id="5_qoury"]
+
+[resource]
+resource_name = "Blade"
+cull_mode = 2
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+albedo_texture = ExtResource("1_ey2f4")
+metallic = 1.0
+metallic_texture = ExtResource("3_qwp66")
+roughness_texture = ExtResource("5_qoury")
+normal_enabled = true
+normal_texture = ExtResource("4_sgy64")
+ao_enabled = true
+ao_texture = ExtResource("2_s2iuv")
+heightmap_enabled = true
+heightmap_scale = 0.03
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("2_80scr")

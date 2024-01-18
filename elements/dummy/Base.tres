@@ -1,0 +1,27 @@
+[gd_resource type="StandardMaterial3D" load_steps=7 format=3 uid="uid://3gs7tdgauryy"]
+
+[ext_resource type="Texture2D" uid="uid://d1h8u7t2dv034" path="res://elements/dummy/dummy_Base_BaseColor.png" id="1_5ta7h"]
+[ext_resource type="Texture2D" uid="uid://dk83r22awolan" path="res://elements/dummy/dummy_Base_AO.png" id="2_6h7go"]
+[ext_resource type="Texture2D" uid="uid://b10oawsbxvma6" path="res://elements/dummy/dummy_Base_Height.exr" id="3_f8kn6"]
+[ext_resource type="Texture2D" uid="uid://dlejdo825se88" path="res://elements/dummy/dummy_Base_Metallic.png" id="4_ba4ps"]
+[ext_resource type="Texture2D" uid="uid://bbwpetcoxjges" path="res://elements/dummy/dummy_Base_Normal.png" id="5_1u4xr"]
+[ext_resource type="Texture2D" uid="uid://bcuffgt13s2uv" path="res://elements/dummy/dummy_Base_Roughness.png" id="6_q1q7l"]
+
+[resource]
+resource_name = "Base"
+cull_mode = 2
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+albedo_texture = ExtResource("1_5ta7h")
+metallic = 1.0
+metallic_texture = ExtResource("4_ba4ps")
+roughness_texture = ExtResource("6_q1q7l")
+normal_enabled = true
+normal_texture = ExtResource("5_1u4xr")
+ao_enabled = true
+ao_texture = ExtResource("2_6h7go")
+heightmap_enabled = true
+heightmap_scale = 0.02
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("3_f8kn6")

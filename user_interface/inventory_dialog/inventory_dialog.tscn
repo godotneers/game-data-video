@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://6r4rm2hswvtu"]
+
+[ext_resource type="Script" path="res://user_interface/inventory_dialog/inventory_dialog.gd" id="1_uehr3"]
+[ext_resource type="PackedScene" uid="uid://cna2r3rric5yl" path="res://user_interface/item_slot/item_slot.tscn" id="2_l2s8o"]
+[ext_resource type="PackedScene" uid="uid://d1efscup5qx56" path="res://user_interface/item_grid/item_grid.tscn" id="3_nxv4r"]
+
+[node name="InventoryDialog" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1284.0
+offset_bottom = -672.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uehr3")
+slot_scene = ExtResource("2_l2s8o")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mr. G's stuff"
+horizontal_alignment = 1
+
+[node name="CloseButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = " X "
+
+[node name="GridContainer" parent="VBoxContainer" instance=ExtResource("3_nxv4r")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

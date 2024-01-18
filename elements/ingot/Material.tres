@@ -1,0 +1,24 @@
+[gd_resource type="StandardMaterial3D" load_steps=7 format=3 uid="uid://cs66ndot4r75s"]
+
+[ext_resource type="Texture2D" uid="uid://n1ighvh8rujj" path="res://elements/ingot/ingot_Material_BaseColor.png" id="1_avyw1"]
+[ext_resource type="Texture2D" uid="uid://dcaxdln2xtufy" path="res://elements/ingot/ingot_Material_AO.png" id="2_8gkpk"]
+[ext_resource type="Texture2D" uid="uid://b37mxwsfeuj3b" path="res://elements/ingot/ingot_Material_Height.exr" id="3_pby3g"]
+[ext_resource type="Texture2D" uid="uid://cxv60uajaqc47" path="res://elements/ingot/ingot_Material_Metallic.png" id="4_l7pyu"]
+[ext_resource type="Texture2D" uid="uid://ca2pqmsbu0oti" path="res://elements/ingot/ingot_Material_Normal.png" id="5_fywkl"]
+[ext_resource type="Texture2D" uid="uid://v2db6umbumg4" path="res://elements/ingot/ingot_Material_Roughness.png" id="6_a60bj"]
+
+[resource]
+resource_name = "Material"
+cull_mode = 2
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+albedo_texture = ExtResource("1_avyw1")
+metallic = 1.0
+metallic_texture = ExtResource("4_l7pyu")
+roughness_texture = ExtResource("6_a60bj")
+normal_enabled = true
+normal_texture = ExtResource("5_fywkl")
+ao_enabled = true
+ao_texture = ExtResource("2_8gkpk")
+heightmap_enabled = true
+heightmap_scale = 0.1
+heightmap_texture = ExtResource("3_pby3g")

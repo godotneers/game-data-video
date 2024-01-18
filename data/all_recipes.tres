@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ResourceGroup" load_steps=2 format=3 uid="uid://devjlrqi4j25h"]
+
+[ext_resource type="Script" path="res://addons/godot_resource_groups/resource_group.gd" id="1_vhwf8"]
+
+[resource]
+script = ExtResource("1_vhwf8")
+base_folder = "res://data/recipes"
+includes = Array[String](["*.tres"])
+excludes = Array[String]([])
+paths = Array[String](["res://data/recipes/iron_ingot.tres", "res://data/recipes/pickaxe.tres"])

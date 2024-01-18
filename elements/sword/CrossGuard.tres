@@ -1,0 +1,21 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://cl0nkkxfk6b30"]
+
+[ext_resource type="Texture2D" uid="uid://42ylgtgj7ys8" path="res://elements/sword/sword_CrossGuard_BaseColor.png" id="1_okr5b"]
+[ext_resource type="Texture2D" uid="uid://cshk0tgthdsr8" path="res://elements/sword/sword_Hilt_Height.exr" id="2_1i0jb"]
+[ext_resource type="Texture2D" uid="uid://1bnevx8e5hdy" path="res://elements/sword/sword_CrossGuard_Metallic.png" id="3_urltl"]
+[ext_resource type="Texture2D" uid="uid://b6vpw3og4xggg" path="res://elements/sword/sword_CrossGuard_Normal.png" id="4_6gjc3"]
+[ext_resource type="Texture2D" uid="uid://cuxi07dwp7g7x" path="res://elements/sword/sword_CrossGuard_Roughness.png" id="5_7agox"]
+
+[resource]
+resource_name = "CrossGuard"
+cull_mode = 2
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+albedo_texture = ExtResource("1_okr5b")
+metallic = 1.0
+metallic_texture = ExtResource("3_urltl")
+roughness_texture = ExtResource("5_7agox")
+normal_enabled = true
+normal_texture = ExtResource("4_6gjc3")
+heightmap_enabled = true
+heightmap_scale = 0.01
+heightmap_texture = ExtResource("2_1i0jb")

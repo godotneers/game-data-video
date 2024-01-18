@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4r3vv6jcyklu"]
+
+[ext_resource type="PackedScene" uid="uid://doq1plpk0isvy" path="res://elements/tree/tree.glb" id="1_ki4hh"]
+[ext_resource type="Script" path="res://elements/harvestable/harvestable.gd" id="1_xcetx"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bc0bi"]
+height = 5.94242
+
+[node name="Tree" type="StaticBody3D"]
+script = ExtResource("1_xcetx")
+
+[node name="tree" parent="." instance=ExtResource("1_ki4hh")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.90886, 0)
+shape = SubResource("CylinderShape3D_bc0bi")

@@ -1,0 +1,27 @@
+[gd_resource type="StandardMaterial3D" load_steps=7 format=3 uid="uid://kypse11uh4u7"]
+
+[ext_resource type="Texture2D" uid="uid://c0pu73sjasukj" path="res://elements/player/mr.g_Head_BaseColor.png" id="1_a5ha4"]
+[ext_resource type="Texture2D" uid="uid://ct1dimyx2ygjf" path="res://elements/player/mr.g_Head_AO.png" id="2_0tt17"]
+[ext_resource type="Texture2D" uid="uid://8waeog2u0d7" path="res://elements/player/mr.g_Head_Height.exr" id="3_pgllg"]
+[ext_resource type="Texture2D" uid="uid://bfyippl6pfaam" path="res://elements/player/mr.g_Head_Metallic.png" id="4_5leox"]
+[ext_resource type="Texture2D" uid="uid://bfo17xykk3rgs" path="res://elements/player/mr.g_Head_Normal.png" id="5_r0s2f"]
+[ext_resource type="Texture2D" uid="uid://w0o1okud2sn" path="res://elements/player/mr.g_Head_Roughness.png" id="6_3prao"]
+
+[resource]
+resource_name = "Head"
+cull_mode = 2
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+albedo_texture = ExtResource("1_a5ha4")
+metallic = 1.0
+metallic_texture = ExtResource("4_5leox")
+roughness_texture = ExtResource("6_3prao")
+normal_enabled = true
+normal_texture = ExtResource("5_r0s2f")
+ao_enabled = true
+ao_texture = ExtResource("2_0tt17")
+heightmap_enabled = true
+heightmap_scale = 0.02
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("3_pgllg")

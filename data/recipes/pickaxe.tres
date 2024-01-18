@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=4 format=3 uid="uid://celiujflu1gqv"]
+
+[ext_resource type="Resource" uid="uid://1n06od3s53jv" path="res://data/items/iron_ingot.tres" id="2_4hyit"]
+[ext_resource type="Resource" uid="uid://dqelj5ln4753c" path="res://data/items/pickaxe.tres" id="2_8cycm"]
+[ext_resource type="Script" path="res://model/recipe.gd" id="3_gv7fm"]
+
+[resource]
+script = ExtResource("3_gv7fm")
+title = "Pickaxe"
+ingredients = Array[Resource("res://model/item.gd")]([ExtResource("2_4hyit"), ExtResource("2_4hyit")])
+results = Array[Resource("res://model/item.gd")]([ExtResource("2_8cycm")])

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1efscup5qx56"]
+
+[ext_resource type="PackedScene" uid="uid://cna2r3rric5yl" path="res://user_interface/item_slot/item_slot.tscn" id="1_exs6d"]
+[ext_resource type="Script" path="res://user_interface/item_grid/item_grid.gd" id="1_kcnqi"]
+
+[node name="ItemGrid" type="GridContainer"]
+columns = 5
+script = ExtResource("1_kcnqi")
+slot_scene = ExtResource("1_exs6d")

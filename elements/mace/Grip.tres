@@ -1,0 +1,24 @@
+[gd_resource type="StandardMaterial3D" load_steps=7 format=3 uid="uid://b8hxowek76dg3"]
+
+[ext_resource type="Texture2D" uid="uid://b85yotyu2io0y" path="res://elements/mace/club_Grip_BaseColor.png" id="1_6de2w"]
+[ext_resource type="Texture2D" uid="uid://hhw64cp5bla7" path="res://elements/mace/club_Grip_AO.png" id="2_wsyyh"]
+[ext_resource type="Texture2D" uid="uid://cov533litbstw" path="res://elements/mace/club_Grip_Height.exr" id="3_b2pv3"]
+[ext_resource type="Texture2D" uid="uid://b6wjhvgafstg6" path="res://elements/mace/club_Grip_Metallic.png" id="4_og3m5"]
+[ext_resource type="Texture2D" uid="uid://y2c4jabwrshs" path="res://elements/mace/club_Grip_Normal.png" id="5_wmh61"]
+[ext_resource type="Texture2D" uid="uid://cxdxkcl3ow63c" path="res://elements/mace/club_Grip_Roughness.png" id="6_w7inr"]
+
+[resource]
+resource_name = "Grip"
+cull_mode = 2
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+albedo_texture = ExtResource("1_6de2w")
+metallic = 1.0
+metallic_texture = ExtResource("4_og3m5")
+roughness_texture = ExtResource("6_w7inr")
+normal_enabled = true
+normal_texture = ExtResource("5_wmh61")
+ao_enabled = true
+ao_texture = ExtResource("2_wsyyh")
+heightmap_enabled = true
+heightmap_scale = 0.01
+heightmap_texture = ExtResource("3_b2pv3")
