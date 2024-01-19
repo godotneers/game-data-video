@@ -11,7 +11,6 @@ radius = 1.0
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_twc2s"]
 
 [node name="Player" type="CharacterBody3D"]
-collision_layer = 2
 script = ExtResource("1_hxcsb")
 
 [node name="Camera" parent="." instance=ExtResource("2_itq8t")]
@@ -55,34 +54,32 @@ bones/12/rotation = Quaternion(-0.210823, 1.1653e-07, -2.51321e-08, 0.977524)
 bones/13/rotation = Quaternion(0.840288, -4.56076e-07, -5.50496e-07, 0.54214)
 bones/14/rotation = Quaternion(0.840288, 3.66856e-07, 7.25006e-07, 0.54214)
 bones/15/scale = Vector3(1, 1, 1)
-bones/16/scale = Vector3(1, 1, 1)
 bones/17/scale = Vector3(1, 1, 1)
-bones/18/scale = Vector3(1, 1, 1)
 
 [node name="Eye L" parent="Model/mr_g/Armature/Skeleton3D" index="0"]
-transform = Transform3D(0.999998, -3.49018e-07, 0.00221326, -3.49588e-07, 1, 0.000315545, -0.00221326, -0.000315547, 0.999997, -0.00118101, -0.000168398, 0.000522792)
+transform = Transform3D(0.999998, -3.48671e-07, 0.00221326, -3.49237e-07, 1, 0.000315306, -0.00221326, -0.000315309, 0.999997, -0.00118101, -0.000168398, 0.000522792)
 
 [node name="Eye R" parent="Model/mr_g/Armature/Skeleton3D" index="1"]
-transform = Transform3D(0.532943, -0.00117933, -1.86215e-07, 1.86267e-07, 0.000168326, -0.532944, 0.00117933, 0.532943, 0.000168326, -0.207193, 0.198796, 0.533873)
+transform = Transform3D(0.532943, -0.00117933, -1.86217e-07, 1.86267e-07, 0.000168327, -0.532944, 0.00117933, 0.532943, 0.000168327, -0.207193, 0.198796, 0.533873)
 
 [node name="Lid L" parent="Model/mr_g/Armature/Skeleton3D" index="2"]
-transform = Transform3D(0.599928, -0.0324579, 0.00750084, -0.0176267, -0.42408, -0.425286, 0.0282679, 0.424412, -0.42438, 0.207193, 0.198796, 0.533873)
+transform = Transform3D(0.599928, -0.0324575, 0.00750171, -0.0176258, -0.42408, -0.425286, 0.0282682, 0.424412, -0.42438, 0.207193, 0.198796, 0.533873)
 
 [node name="Lid R" parent="Model/mr_g/Armature/Skeleton3D" index="3"]
-transform = Transform3D(0.599134, -0.00352585, -0.0452685, -0.0345855, -0.423571, -0.424752, -0.0294196, 0.426143, -0.422563, -0.207193, 0.198796, 0.533873)
+transform = Transform3D(0.599134, -0.00352618, -0.0452688, -0.0345859, -0.423572, -0.424752, -0.0294196, 0.426143, -0.422563, -0.207193, 0.198796, 0.533873)
 
 [node name="Hand R" parent="Model/mr_g/Armature/Skeleton3D" index="4"]
-transform = Transform3D(1, 1.13687e-13, -1.31687e-13, -2.84217e-13, 1, -2.38419e-07, 1.1653e-13, 2.38419e-07, 1, -0.944505, -0.121741, -0.0688697)
+transform = Transform3D(1, 1.13687e-13, -1.31687e-13, -2.27374e-13, 1, -2.38419e-07, 1.1653e-13, 2.38419e-07, 1, -0.944505, -0.121741, -0.0688697)
 
 [node name="Hand L" parent="Model/mr_g/Armature/Skeleton3D" index="5"]
-transform = Transform3D(1, -1.13687e-13, 1.31687e-13, 2.84217e-13, 1, -2.38419e-07, -1.1653e-13, 2.38419e-07, 1, -0.944505, -0.121741, -0.0688697)
+transform = Transform3D(1, -1.13687e-13, 1.31687e-13, 2.27374e-13, 1, -2.38419e-07, -1.1653e-13, 2.38419e-07, 1, -0.944505, -0.121741, -0.0688697)
 
 [node name="Head" parent="Model/mr_g/Armature/Skeleton3D" index="6"]
 transform = Transform3D(0.532944, 0, 0, 0, 0.532944, 0, 0, 0, 0.532944, 0, 0, 0)
 
 [node name="HandAttachment" type="BoneAttachment3D" parent="Model"]
 unique_name_in_owner = true
-transform = Transform3D(-1, -1.3453e-13, -8.74226e-08, -2.84217e-13, 1, -2.38419e-07, 8.74227e-08, -2.38419e-07, -1, 0.944505, 0.905029, 0.0688696)
+transform = Transform3D(1, 1.13687e-13, -1.31687e-13, -2.27374e-13, 1, -2.38419e-07, 1.1653e-13, 2.38419e-07, 1, -0.944505, -0.121741, -0.0688697)
 bone_name = "Hand R"
 bone_idx = 16
 use_external_skeleton = true

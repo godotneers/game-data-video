@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://model/item.gd" id="1_8nqhr"]
 [ext_resource type="Texture2D" uid="uid://6w7wmvfhl6y4" path="res://elements/ingot/ingot_icon.svg" id="1_qw811"]
-[ext_resource type="PackedScene" uid="uid://dpdise5u2r0ci" path="res://elements/ingot/ingot.tscn" id="2_1jqax"]
+[ext_resource type="PackedScene" uid="uid://d34kajrq6ea5s" path="res://elements/ingot/ingot.glb" id="2_lon73"]
 
 [resource]
 script = ExtResource("1_8nqhr")
 name = "Iron Ingot"
 icon = ExtResource("1_qw811")
-scene = ExtResource("2_1jqax")
+scene = ExtResource("2_lon73")
 price = 5

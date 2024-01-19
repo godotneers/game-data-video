@@ -8,44 +8,13 @@ extends CharacterBody3D
 @onready var _animation_player:AnimationPlayer = %AnimationPlayer
 ## The actual player model.
 @onready var _model:Node3D = %Model
-## The node to which stuff in the hand is attached.
-@onready var _hand_attachment:Node3D = %HandAttachment
 ## The camera
 @onready var _camera:Camera = %Camera
 
 var inventory:Inventory = Inventory.new()
 
-## the visual of the currently equipped item
-var _current_item_visual:Node3D
-## the currently equipped item
-var _current_item:Item
-
-func get_current_item() -> Item:
-	return _current_item
-
-
 func on_item_picked_up(item:Item):
 	inventory.add_item(item)
-	
-func equip(item:Item):
-	
-	if is_instance_valid(_current_item):
-		unequip()
-		
-	inventory.remove_item(item)
-	_current_item = item		
-	_current_item_visual = _current_item.instantiate()
-	_hand_attachment.add_child(_current_item_visual)	
-
-func unequip():
-	if is_instance_valid(_current_item):
-		inventory.add_item(_current_item)
-		
-		_hand_attachment.remove_child(_current_item_visual)
-		_current_item_visual.queue_free()
-		_current_item = null
-		_current_item_visual = null
-		
 
 func _physics_process(delta) -> void:
 	if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
@@ -70,8 +39,6 @@ func _physics_process(delta) -> void:
 		
 	if Input.is_action_just_pressed("attack"):
 		_animation_player.play("player_animations/Swing")
-		if _current_item_visual != null:
-			_current_item_visual.swing(1.0)
 	
 	move_and_slide()
 

@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpdise5u2r0ci"]
-
-[ext_resource type="PackedScene" uid="uid://d34kajrq6ea5s" path="res://elements/ingot/ingot.glb" id="1_wexev"]
-
-[node name="Ingot" type="Node3D"]
-
-[node name="ingot" parent="." instance=ExtResource("1_wexev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0447125, 0)

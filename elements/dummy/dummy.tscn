@@ -1,16 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://grvayjmmafd5"]
+[gd_scene load_steps=3 format=3 uid="uid://grvayjmmafd5"]
 
 [ext_resource type="PackedScene" uid="uid://cwrsrksg3ohyj" path="res://elements/dummy/dummy.glb" id="1_oqrml"]
-[ext_resource type="Script" path="res://elements/dummy/dummy.gd" id="1_oxs3f"]
-[ext_resource type="PackedScene" uid="uid://cl5tk0f46mk6u" path="res://elements/damage_indicator/damage_indicator.tscn" id="2_ed2t0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8cox6"]
 radius = 0.853952
 height = 2.42202
 
 [node name="Dummy" type="StaticBody3D"]
-script = ExtResource("1_oxs3f")
-damage_indicator = ExtResource("2_ed2t0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0365729, 1.00144, 0)

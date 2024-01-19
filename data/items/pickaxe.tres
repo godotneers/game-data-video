@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dwgypj0w5vu8t" path="res://elements/pickaxe/pickaxe_icon.svg" id="1_fvv31"]
 [ext_resource type="Script" path="res://model/item.gd" id="1_l781p"]
-[ext_resource type="PackedScene" uid="uid://bgv1h3bdblviy" path="res://elements/pickaxe/pickaxe.tscn" id="2_7g2m8"]
+[ext_resource type="PackedScene" uid="uid://cqqfd6fdo0eiy" path="res://elements/pickaxe/pickaxe.glb" id="2_7g2m8"]
 
 [resource]
 script = ExtResource("1_l781p")
