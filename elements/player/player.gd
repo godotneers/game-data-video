@@ -11,10 +11,6 @@ extends CharacterBody3D
 ## The camera
 @onready var _camera:Camera = %Camera
 
-var inventory:Inventory = Inventory.new()
-
-func on_item_picked_up(item:Item):
-	inventory.add_item(item)
 
 func _physics_process(delta) -> void:
 	if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
