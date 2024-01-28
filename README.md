@@ -1,9 +1,8 @@
 # Using data models with Godot
 
-TODO: replace video when published
 <p align="center">
   <p align="center">
-  <a href="https://www.youtube.com/watch?v=43BZsLZheA4"><img src="https://i3.ytimg.com/vi/43BZsLZheA4/hqdefault.jpg" alt="Saving and Loading with Godot, Video on YouTube Cover Image"></a> 
+  <a href="https://www.youtube.com/watch?v=4vAkTHeoORk"><img src="https://i3.ytimg.com/vi/4vAkTHeoORk/hqdefault.jpg" alt="Data models in Godot, Video on YouTube Cover Image"></a> 
   </p>
 </p>
 
