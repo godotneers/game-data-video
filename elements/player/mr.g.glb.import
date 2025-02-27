@@ -34,7 +34,7 @@ _subresources={
 "Blink": {
 "save_to_file/enabled": true,
 "save_to_file/keep_custom_tracks": "",
-"save_to_file/path": "res://player/Blink.res",
+"save_to_file/path": "res://elements/player/Blink.res",
 "settings/loop_mode": 0,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,
@@ -1833,7 +1833,7 @@ _subresources={
 "Swing": {
 "save_to_file/enabled": true,
 "save_to_file/keep_custom_tracks": "",
-"save_to_file/path": "res://player/Swing.res",
+"save_to_file/path": "res://elements/player/Swing.res",
 "settings/loop_mode": 0,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,
